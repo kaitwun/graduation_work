@@ -1,8 +1,8 @@
-# sqlite3をimport
-import sqlite3
-# flaskをimportする
+import graduation_work.each_program
 from flask import Flask, render_template, request, redirect, session
+import sqlite3
 app = Flask(__name__)
+app.secret_key = "sunabacokoza"
 
-app.secret_key = "sunabakoza"
-
+if __name__ == "__main__":
+    app.run(debug=True)
