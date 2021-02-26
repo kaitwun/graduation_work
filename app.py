@@ -1,4 +1,3 @@
-import kaito
 # sqlite3をimport
 import sqlite3
 # flaskをimportする
