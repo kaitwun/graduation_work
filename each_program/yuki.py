@@ -1,19 +1,15 @@
-# flaskをimportしてflaskを使えるようにする
-from flask import Flask, render_template 
+# # flaskをimportしてflaskを使えるようにする
+from flask import *
 import sqlite3
 
-# app Flaskを定義して使えるようにします。
-# flaskクラスのインスタンスを使ってappという変数に代入している
+# # app Flaskを定義して使えるようにします。
+# # flaskクラスのインスタンスを使ってappという変数に代入している
 app = Flask(__name__)
 
-@app.route('/')
-def new_post():
-    return "New"
 
 @app.route("/top")
 def top():
-    return "New POST（投稿）"
-
+    return render_template("top.html")
 
 
 @app.route("/introduce")
