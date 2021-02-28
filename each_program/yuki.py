@@ -9,7 +9,15 @@ app = Flask(__name__)
 
 @app.route("/top")
 def top():
-    return render_template("top.html")
+    
+    conn = sqlite3.connect("graduation_work.db") #DBに接続
+    c = conn.cursor() #DBの中身をみれるようにする
+    c.execute("select image from posts")
+    image = c.fetchall()
+    image = image[0]
+    py_image = 
+        return render_template("top.html",html_image)
+
 
 
 @app.route("/introduce")
