@@ -1,5 +1,4 @@
-import each_program
-from flask import Flask, render_template, request, redirect, session, url_for
+from flask import Flask, render_template, request, redirect, session, url_for, Blueprint
 from each_program import kaito, mika, takenoko, yuki
 import sqlite3
 import datetime
