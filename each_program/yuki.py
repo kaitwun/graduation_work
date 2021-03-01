@@ -9,14 +9,21 @@ app = Flask(__name__)
 
 @app.route("/top")
 def top():
-    
     conn = sqlite3.connect("graduation_work.db") #DBに接続
     c = conn.cursor() #DBの中身をみれるようにする
-    c.execute("select image from posts")
-    image = c.fetchall()
-    image = image[0]
-    py_image = 
-        return render_template("top.html",html_image)
+    c.execute("select image, title from posts")
+    #取得した値を変数に代入
+    post = []
+    for item in c.fetchall(): #すべてのデータを辞書型に整形
+        post.append({"image":post[0],"title":post[1]})
+
+    # image = c.fetchall()#全部取って参る
+    c.close() #DB接続終了
+    print(post) #ターミナル上で確認
+    #DBからimageのデータを取得
+        return render_template("top.html",tpl_post = post)
+
+    
 
 
 
