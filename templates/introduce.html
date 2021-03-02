@@ -1,8 +1,43 @@
 {% extends "base.html" %}
 
 {% block content %}
+<!-- 投稿詳細ページ -->
+<article>
+    <!-- <section id="post_header"></section> -->
+    <section id="photo_area">
+        <img src="../static/img/no_img.png" alt="画像">
+    </section>
+    <section id="level">
+        <p>マニアック度</p>
+        <div>
+            <span>レベル１</span>
+            <span>レベル２</span>
+            <span>レベル３</span>
+        </div>
+ 
+    </section>
+    <section id="text_area">
+        <p>テキストを表示</p>
+    </section>
+    <section id="category_area">
+        <p>カテゴリーを表示</p>
+    </section>
+    <section id="place_area">
+        <p>入手先を表示</p>
+    </section>
+    <section id="comment_area">
+        <form action="/introduce" method="post">
+            <p>名前<br>
+            <input type="text" name="name"></p>
+            <p>コメント<br>
+            <textarea name="comment" cols="20" rows="5" wrap="soft" maxlength="100"></textarea></p>
+            <button type="submit" name="send">コメントする</button>
+        </form>
+    </section>
 
-   <h1></h1>
+
+</article>
+   
 
 
 
