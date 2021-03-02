@@ -16,37 +16,37 @@
         <section id="sec1">
             <h1>New Post(投稿)</h1>
         </section>
-
+    
         <section id="sec2">
-             {% for post_item in tpl_post %}
+        {% for post_item in tpl_post %}
             <div class="items">               
                 <div class="post_item">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="../static/img/{{post_item['image']}}"alt="投稿内容">
+                    <a href="#"></a><img src="/static/img/{{post_item['image']}}" alt="投稿内容">
+                    <a href="#"></a><p>{{post_item["title"]}}</p>
+                </div>
+                <div class="post_item">
+                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/{{post_item['image']}}" alt="投稿内容">
                     <a href="#<!--商品投稿ページ-->"></a><p>{{post_item["title"]}}</p>
                 </div>
                 <div class="post_item">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="../static/img/{{post_item['image']}}"alt="投稿内容">
+                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/{{post_item['image']}}" alt="投稿内容">
                     <a href="#<!--商品投稿ページ-->"></a><p>{{post_item["title"]}}</p>
                 </div>
                 <div class="post_item">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="../static/img/{{post_item['image']}}" alt="投稿内容">
+                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/{{post_item['image']}}" alt="投稿内容">
                     <a href="#<!--商品投稿ページ-->"></a><p>{{post_item["title"]}}</p>
                 </div>
                 <div class="post_item">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="../static/img/{{post_item['image']}}" alt="投稿内容">
+                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/{{post_item['image']}}" alt="投稿内容">
                     <a href="#<!--商品投稿ページ-->"></a><p>{{post_item["title"]}}</p>
                 </div>
                 <div class="post_item">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="../static/img/{{post_item['image']}}" alt="投稿内容">
-                    <a href="#<!--商品投稿ページ-->"></a><p>{{post_item["title"]}}</p>
-                </div>
-                <div class="post_item">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="../static/img/{{post_item['image']}}" alt="投稿内容">
+                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/{{post_item['image']}}" alt="投稿内容">
                     <a href="#<!--商品投稿ページ-->"></a><p>{{post_item["title"]}}</p>
                 </div>
                
             </div>   
-             {% endfor %}
+        {% endfor %}
         </section>
 
         <section id="sec3">
@@ -106,13 +106,8 @@
 
 
         </section>
-
-
-
-
-
-
     </article>
+    
 </body>
 
 </html>

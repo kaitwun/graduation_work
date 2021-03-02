@@ -1,13 +1,20 @@
 # # flaskをimportしてflaskを使えるようにする
-from flask import *
+from flask import Flask, render_template, request, redirect, session, url_for ,Blueprint
 import sqlite3
 
 # # app Flaskを定義して使えるようにします。
 # # flaskクラスのインスタンスを使ってappという変数に代入している
+# app = Blueprint('yuki' ,__name__)
 app = Flask(__name__)
 
+app.secret_key = "sunabacokoza"
 
 @app.route("/")
+def index():
+    return render_template('top.html')
+
+
+@app.route("/top" ,methods=["GET"])
 def top():
     conn = sqlite3.connect("graduation_work copy.db") #DBに接続
     c = conn.cursor() #DBの中身をみれるようにする
@@ -23,13 +30,8 @@ def top():
     #DBからimageのデータを取得
     return render_template("top.html",tpl_post = post)
 
-    
 
 
-
-@app.route("/introduce")
-def tpl():
-    return render_template("introduce.html")
 
 
 if __name__ == "__main__":
