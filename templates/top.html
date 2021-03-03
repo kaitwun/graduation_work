@@ -1,11 +1,84 @@
+
 {% extends "base.html" %}
+
 {% block content %}
-<body>
-    <h1>New Post(投稿）</h1>
-    <div>
-        <!-- <img src="" alt=""> -->
-    </div>
-</body>
+
+    <article>
+        <section id="sec1">
+            <h1>New Post(投稿)</h1>
+        </section>
+
+        
+        <section id="sec2">
+
+            <div class="items">   
+                {% for post_item in tpl_post %}                        
+                <div class="post_item">
+                    <a href="#"><img src="/static/img/{{post_item['image']}}" alt="投稿内容"></a>
+                    <a href="#"><p>{{post_item["title"]}}</p></a>
+                </div>                
+                {% endfor %}
+            </div>   
+        
+        </section>
+
+        <section id="sec3">
+            <div class="levels">               
+                <div class="level">
+                     <p>Level 1</p>
+                </div>
+                <div class="level">
+                    <a href="#"><img src="/static/img/{{tpl_level1}}" alt="投稿内容"></a>
+                </div>
+                <div class="level">
+                    <a href="#"><img src="/static/img/{{tpl_level1}}" alt="投稿内容"></a>
+                </div>
+                <div class="level">
+                    <a href="#"><img src="/static/img/{{tpl_level1}}" alt="投稿内容"></a>
+                </div>
+                <div>
+                    <a href="#">もっと見る</a>
+                </div>
+            </div>
+            
+            <div class="levels">               
+                <div class="level">
+                     <p>Level 2</p>
+                </div>
+                <div class="level">
+                    <a href="#"><img src="/static/img/{{tpl_level2}}" alt="投稿内容"></a>
+                </div>
+                <div class="level">
+                    <a href="#"><img src="/static/img/{{tpl_level2}}" alt="投稿内容"></a>
+                </div>
+                <div class="level">
+                    <a href="#"><img src="/static/img/{{tpl_level2}}" alt="投稿内容"></a>
+                </div>
+                <div>
+                    <a href="#">もっと見る</a>
+                </div>
+            </div>
+
+            <div class="levels">               
+                <div class="level">
+                     <p>Level 3</p>
+                </div>
+                <div class="level">
+                    <a href="#<!--商品投稿ページ-->"><img src="/static/img/no_img.png" alt="投稿内容"></a>
+                </div>
+                <div class="level">
+                    <a href="#<!--商品投稿ページ-->"><img src="/static/img/no_img.png" alt="投稿内容"></a>
+                </div>
+                <div class="level">
+                    <a href="#<!--商品投稿ページ-->"><img src="/static/img/no_img.png" alt="投稿内容"></a>
+                </div>
+                <div>
+                    <a href="#">もっと見る</a>
+                </div>
+            </div>
 
 
-{% endlock %}
+        </section>
+    </article>
+
+{% endblock %}
