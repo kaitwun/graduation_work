@@ -1,14 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../static/css/style.css">
-    <title>Document</title>
-</head>
 
-<body>
+{% extends "base.html" %}
+
+{% block content %}
+
     <article>
         <section id="sec1">
             <h1>New Post(投稿)</h1>
@@ -20,8 +14,8 @@
             <div class="items">   
                 {% for post_item in tpl_post %}                        
                 <div class="post_item">
-                    <a href="#"></a><img src="/static/img/{{post_item['image']}}" alt="投稿内容">
-                    <a href="#"></a><p>{{post_item["title"]}}</p>
+                    <a href="#"><img src="/static/img/{{post_item['image']}}" alt="投稿内容"></a>
+                    <a href="#"><p>{{post_item["title"]}}</p></a>
                 </div>                
                 {% endfor %}
             </div>   
@@ -34,13 +28,13 @@
                      <p>Level 1</p>
                 </div>
                 <div class="level">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/no_img.png" alt="投稿内容">
+                    <a href="#"><img src="/static/img/{{tpl_level1}}" alt="投稿内容"></a>
                 </div>
                 <div class="level">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/no_img.png" alt="投稿内容">
+                    <a href="#"><img src="/static/img/{{tpl_level1}}" alt="投稿内容"></a>
                 </div>
                 <div class="level">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/no_img.png" alt="投稿内容">
+                    <a href="#"><img src="/static/img/{{tpl_level1}}" alt="投稿内容"></a>
                 </div>
                 <div>
                     <a href="#">もっと見る</a>
@@ -52,13 +46,13 @@
                      <p>Level 2</p>
                 </div>
                 <div class="level">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/no_img.png" alt="投稿内容">
+                    <a href="#"><img src="/static/img/{{tpl_level2}}" alt="投稿内容"></a>
                 </div>
                 <div class="level">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/no_img.png" alt="投稿内容">
+                    <a href="#"><img src="/static/img/{{tpl_level2}}" alt="投稿内容"></a>
                 </div>
                 <div class="level">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/no_img.png" alt="投稿内容">
+                    <a href="#"><img src="/static/img/{{tpl_level2}}" alt="投稿内容"></a>
                 </div>
                 <div>
                     <a href="#">もっと見る</a>
@@ -70,13 +64,13 @@
                      <p>Level 3</p>
                 </div>
                 <div class="level">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/no_img.png" alt="投稿内容">
+                    <a href="#<!--商品投稿ページ-->"><img src="/static/img/no_img.png" alt="投稿内容"></a>
                 </div>
                 <div class="level">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/no_img.png" alt="投稿内容">
+                    <a href="#<!--商品投稿ページ-->"><img src="/static/img/no_img.png" alt="投稿内容"></a>
                 </div>
                 <div class="level">
-                    <a href="#<!--商品投稿ページ-->"></a><img src="/static/img/no_img.png" alt="投稿内容">
+                    <a href="#<!--商品投稿ページ-->"><img src="/static/img/no_img.png" alt="投稿内容"></a>
                 </div>
                 <div>
                     <a href="#">もっと見る</a>
@@ -86,7 +80,5 @@
 
         </section>
     </article>
-    
-</body>
 
-</html>
+{% endblock %}
