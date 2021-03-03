@@ -25,12 +25,23 @@ def top():
         post.append({"image":item[0],"title":item[1]})
 
     # image = c.fetchall()#全部取って参る
-    c.close() #DB接続終了
+    # c.close() #DB接続終了
     print(post) #ターミナル上で確認
     # #DBからimageのデータを取得
-    return render_template("top.html",tpl_post = post)
+    # return render_template("top.html",tpl_post = post)
 
-    
+    c.execute("SELECT image from posts where main_evaluation = 'level 1'")
+    image_1 = c.fetchmany(3)
+    # c.close()
+    print(image_1)
+    # return render_template("top.html",tpl_level1 = image_1)
+
+    c.execute("SELECT image from posts where main_evaluation = 'level 2'")
+    image_2 = c.fetchmany(3)
+    c.close()
+    print(image_2)
+    return render_template("top.html",tpl_post = post, tpl_level1 = image_1, tpl_level2 = image_2)
+   
 
 
 
