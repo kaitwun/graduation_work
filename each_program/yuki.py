@@ -33,14 +33,22 @@ def top():
     c.execute("SELECT image from posts where main_evaluation = 'level 1'")
     image_1 = c.fetchmany(3)
     # c.close()
-    print(image_1)
+    print(image_1) 
+    print(image_1[0]) #要素の確認
     # return render_template("top.html",tpl_level1 = image_1)
 
     c.execute("SELECT image from posts where main_evaluation = 'level 2'")
     image_2 = c.fetchmany(3)
-    c.close()
+    # c.close()
     print(image_2)
-    return render_template("top.html",tpl_post = post, tpl_level1 = image_1, tpl_level2 = image_2)
+    print(image_2[0])
+    print(image_2[1])
+
+    c.execute("SELECT image from posts where main_evaluation = 'level 3'")
+    image_3 = c.fetchmany(3)
+    c.close()
+    print(image_3)
+    return render_template("top.html",tpl_post = post, tpl_level1 = image_1, tpl_level2 = image_2, tpl_level3 = image_3)
    
 
 
