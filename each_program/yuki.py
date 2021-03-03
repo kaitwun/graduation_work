@@ -5,7 +5,7 @@ import sqlite3
 # # app Flaskを定義して使えるようにします。
 # # flaskクラスのインスタンスを使ってappという変数に代入している
 app = Blueprint('yuki' ,__name__)
-app = Flask(__name__)
+# app = Flask(__name__)
 
 # app.secret_key = "sunabacokoza"
 
