@@ -51,8 +51,17 @@ def top():
     return render_template("top.html",tpl_post = post, tpl_level1 = image_1, tpl_level2 = image_2, tpl_level3 = image_3)
    
 
+@app.route("/introduce-get/<int:post_id>")
+def introduce_get(post_id):
+    conn = sqlite3.connect("graduation_work.db") #DBに接続
+    c = conn.cursor() #DBの中身をみれるようにする
+    c.execute("select * from posts where id = ?" ,(post_id,))
+    intrduce_post = c.fechone()
+    c.close()
+    print(into)
 
 
+    return render_template("intoroduce.html"/)
 
 if __name__ == "__main__":
     app.run(debug=True)
