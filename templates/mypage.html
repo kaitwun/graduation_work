@@ -1,8 +1,54 @@
 {% extends "base.html" %}
 
 {% block content %}
+<div class="mypage_header">
 
-   <h1></h1>
+   <h1>〇〇さん</h1>
+
+   <button type="button" name="profile_edit">登録情報確認・変更</button>
+
+
+</div>
+
+<div class="mypage_post_list">
+
+   <ul style="list-style-type: none;" style="display: inline;">
+      <li>
+         <img src="../static/img/no_img.png" alt="">
+         <p>title</p>
+         <button type="button" name="edit_{{post_id}}">編集</button>
+         <button type="button" name="delete_{{post_id}}">削除</button>
+      </li>
+
+      <li>
+         <img src="../static/img/no_img.png" alt="">
+         <p>title</p>
+         <button type="button" name="edit_{{post_id}}">編集</button>
+         <button type="button" name="delete_{{post_id}}">削除</button>
+      </li>
+
+      <li>
+         <img src="../static/img/no_img.png" alt="">
+         <p>title</p>
+         <button type="button" name="edit_{{post_id}}">編集</button>
+         <button type="button" name="delete_{{post_id}}">削除</button>
+      </li>
+
+      <li>
+         <img src="../static/img/no_img.png" alt="">
+         <p>title</p>
+         <button type="button" name="edit_{{post_id}}">編集</button>
+         <button type="button" name="delete_{{post_id}}">削除</button>
+      </li>
+
+   </ul>
+
+</div>
+
+<button type="button" name="logout">ログアウト</button>
+   
+   
+
 
 
 
