@@ -1,3 +1,4 @@
+  
 # splite3をimportする
 import sqlite3
 # flaskをimportしてflaskを使えるようにする
