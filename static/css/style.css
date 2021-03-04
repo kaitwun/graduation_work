@@ -6,17 +6,32 @@ register_form {
     margin: 0 auto
 }
 
+profile_edit_form {
+    text-align: center;
+    margin: 0 auto
+}
 
+login_form {
+    text-align: center;
+    margin: 0 auto
+}
 
+mypage_post {
+    text-align: center;
+}
 
+ul.mypage_list {
+    
+    list-style-type: none;
+}
 
+mypage_list.li {
+    display: inline;
+}
 
-
-
-
-
-
-
+logout {
+    text-decoration: none;
+}
 
 
 
@@ -167,11 +182,24 @@ div.post_form{
 body{
     background: #fff;
 	text-align: center;
-	font-size: 16px;
+	font-size: 25px;
 	line-height: 1.4;
 	min-width: 100%;
 	-webkit-text-size-adjust: 100%;
     background-color: #fffacd;
+    font-family:"Honnotate sc";
+}
+
+h1 {
+    font-size: 50px;
+    color:#6b8e23;
+    margin-top : 20px;
+    margin-bottom: 20px;
+}
+
+h2{
+    color: #6b8e23;
+    font-size: 30px;
 }
 .items{
     display:flex;
@@ -180,8 +208,11 @@ body{
     align-items:center;
     width: 1200px;
     margin:0 auto;
+    text-align: left;
 }
- 
+.title{
+    font-weight: bolder;
+}
 .post_item{
     box-sizing: border-box;
     border:0px solid #ccc;
@@ -190,28 +221,47 @@ body{
     width: 33.3% ;
 }
 
+a{
+    text-decoration: none;
+    color:#000000
+}
+
+
+a:hover{
+    color: #ff8c00 ;
+    font-weight: bolde;
+    
+}
+
 p{
  margin: 0;
 }
 
-img{
+.image_top{
     width: 350px;
+}
+
+img{
+    width: 200px;
 }
 
 #sec2{
     margin-bottom:100px;
+    color:black;
 }
 .levels{
     display:flex;
     justify-content:center;
     align-items:center;
-    border: 1px solid;
+    border-bottom: #ff8c00 1px solid;
     
 }
 
-.level{
-    padding:30px
+.border{
+    border-top: #ff8c00 1px solid;
 }
-
+.level{
+    padding:40px
+}
 
 
