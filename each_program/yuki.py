@@ -26,7 +26,7 @@ def top():
 
     # image = c.fetchall()#全部取って参る
     # c.close() #DB接続終了
-    print(post) #ターミナル上で確認
+    # print(post) #ターミナル上で確認
     # #DBからimageのデータを取得
     # return render_template("top.html",tpl_post = post)
 
@@ -58,11 +58,11 @@ def introduce_get(post_id):
     c.execute("select * from posts where id = ?" ,(post_id,))
     details_post = c.fetchone()
     c.close()
-    print(details_post)
+    # print(details_post)
     return render_template("introduce.html")
 
 
-@app.route("/level/<int:evaluation_level>")
+@app.route("/page_level/<int:evaluation_level>")
 def level_get(evaluation_level):
     conn = sqlite3.connect("graduation_work copy.db") #DBに接続
     c = conn.cursor() #DBの中身をみれるようにする

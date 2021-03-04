@@ -1,0 +1,26 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+    <article>
+        <section id="sec1">
+            <h1>マニアック度</h1>
+        </section>
+
+        <section id="sec2">
+
+            <div class="items">   
+                {% for post_item in tpl_post %}                        
+                <div class="post_item">
+                    <a href="/introduce/{{post_item['post_id']}}"><img src="/static/img/{{post_item['image']}}" class="image_top" alt="投稿内容"></a>
+                    <a href="#"><p class = "title">{{post_item["title"]}}</p></a>
+                </div>                
+                {% endfor %}
+            </div>   
+        
+        </section>
+        
+    </article>
+
+{% endblock %}
