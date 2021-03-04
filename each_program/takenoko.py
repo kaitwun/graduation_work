@@ -41,7 +41,7 @@ def new_post():
 def intoduce(post_id):
         conn = sqlite3.connect("graduation_work.db")
         c = conn.cursor()
-        c.execute("SELECT user_id,title,image,main_evaluation,main_comment,location,category,date from posts WHERE post_id = ?",(post_id,))
+        c.execute("SELECT user_id,title,image,main_evaluation,main_comment,location,category,date from posts WHERE id = ?",(post_id,))
         details = c.fetchone()
         c.execute("SELECT name FROM users WHERE id = ?",(details[0],))
         user_name = c.fetchone() 
