@@ -16,13 +16,22 @@ login_form {
     margin: 0 auto
 }
 
+mypage_post {
+    text-align: center;
+}
 
+ul.mypage_list {
+    
+    list-style-type: none;
+}
 
+mypage_list.li {
+    display: inline;
+}
 
-
-
-
-
+logout {
+    text-decoration: none;
+}
 
 
 

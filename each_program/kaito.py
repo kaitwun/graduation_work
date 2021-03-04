@@ -70,10 +70,23 @@ def logout():
 def mypage():
     if request.method == "GET":
         if "user_id" in session:
-            return render_template("/mypage")
+            user_id = session['user_id']
+            conn = sqlite3.connect('graduation_work copy.db')
+            c = conn.cursor()
+            c.execute("select name from users where id = ?", (user_id,))
+            user_name = c.fetchone()
+            return render_template("mypage.html", user_name = user_name)
 
-# @app.route("/profile", methods=["GET", "POST"])
-# def profile():
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    if request.method == "GET":
+        if "user_id" in session:
+            user_id = session['user_id']
+            conn = sqlite3.connect('graduation_work copy.db')
+            c = conn.cursor()
+            c.execute("select name, email, password, age, gender from users where id = ?", (user_id,))
+            user_info = c.fetchone()
+            return render_template("profile.html", user_info = user_info)
 
         
 

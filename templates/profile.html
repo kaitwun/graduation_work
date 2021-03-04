@@ -6,14 +6,12 @@
 <div class="profile_edit_form">
 
     <form action="/register" method="post">
-        Eメールアドレス：<input type="text" name="e-mail" value="xxxyyyzzz@gmail.com"><br>
-        パスワード：<input type="password" name="password" value="・・・・・・"><br>
-        パスワード確認用：<input type="password" name="password" value="・・・・・・"><br>
-        名前：<input type="text" name="name" value="Suga Yoshihide"><br> 
-        年齢：<input type="integer" name="age" value="72"><br>
-        性別：<input type="radio" name="gender" value="male">男性
-        <input type="radio" name="gender" value="female">女性
-        <input type="radio" name="gender" value="other">その他<br>
+        Eメールアドレス：<input type="text" name="e-mail" value="{{user_info[1]}}"><br>
+        パスワード：<input type="password" name="password" value="{{user_info[2]}}"><br>
+        パスワード確認用：<input type="password" name="password" value="{{user_info[2]}}"><br>
+        名前：<input type="text" name="name" value="{{user_info[0]}}"><br> 
+        年齢：<input type="integer" name="age" value="{{user_info[3]}}"><br>
+        
         
         <input type="submit" name="save_again" value="保存">
     </form>
