@@ -69,11 +69,18 @@ logout {
 
 /* --------------------mika-------------------- */
 
+.f-container {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    background-color:#FFFACD;
+    color: #333229
+} 
 
-
-
-
-
+li {
+    list-style: none;
+    color: #333229;
+}
 
 
 
