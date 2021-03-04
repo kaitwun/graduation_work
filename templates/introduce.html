@@ -3,14 +3,14 @@
 {% block content %}
 <!-- 投稿詳細ページ -->
 <article>
-    <section id="username_area">
-        <p>投稿者名</p>
+    <section id="user_name_area">
+        <p>{{tpl_user_name[0]}}</p>
     </section>
-    <section id="mylevel_area">
-        <p>私のマニアック度</p>
+    <section id="main_avaluation_area">
+        <p>私のマニアック度{{tpl_details[3]}}</p>
     </section>
-    <section id="photo_area">
-        <img src="../static/img/no_img.png" alt="画像">
+    <section id="image_area">
+        <img src="../static/img/{{tpl_details[2]}}" alt="画像">
     </section>
     <section id="level_area">
         <p>マニアック度</p>
@@ -21,14 +21,14 @@
         </div>
  
     </section>
-    <section id="text_area">
-        <p>テキストを表示</p>
+    <section id="main_comment_area">
+        <p>コメント：{{tpl_details[4]}}</p>
     </section>
     <section id="category_area">
-        <p>カテゴリーを表示</p>
+        <p>カテゴリー:{{tpl_details[6]}}</p>
     </section>
-    <section id="place_area">
-        <p>入手先を表示</p>
+    <section id="location_area">
+        <p>入手先：{{tpl_details[5]}}</p>
     </section>
     <section id="comment_area">
         <form action="/introduce" method="post">
