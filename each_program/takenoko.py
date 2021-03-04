@@ -24,7 +24,7 @@ def new_post():
         title =  request.form.get("title")
         food =  request.form.get("food")
         image =  request.form.get("image")
-        main_evaluation=  request.form.get("main_evaluation")
+        main_evalution=  request.form.get("main_evalution")
         main_comment =  request.form.get("main_comment")
         location =  request.form.get("location")
         category =  request.form.get("category")
@@ -41,10 +41,11 @@ def new_post():
 def intoduce(post_id):
         conn = sqlite3.connect("graduation_work.db")
         c = conn.cursor()
-        c.execute("SELECT user_id,title,image,main_evaluation,main_comment,location,category,date from posts WHERE post_id = ?",(post_id,))
+        c.execute("SELECT user_id,title,image,main_evaluation,main_comment,location,category,date from posts WHERE id = ?",(post_id,))
         details = c.fetchone()
         c.execute("SELECT name FROM users WHERE id = ?",(details[0],))
         user_name = c.fetchone() 
+        ptint(user_name)
         conn.close()
         return render_template("introduce.html" , tpl_details = details, tpl_user_name = user_name)
 
@@ -65,7 +66,7 @@ def intoduce(post_id):
             c = conn.cursor()
             c.execute("SELECT users_id, others_comment, date FROM replys WHERE posts_id = ?",(post_id,))
             reply_info = c.fetchone()
-            return render_template("introduce.html", reply_info = reply_info)
+            return render_template("introduce.html" ,reply_info = reply_info)
 
 
         

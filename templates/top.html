@@ -15,26 +15,26 @@
                 {% for post_item in tpl_post %}                        
                 <div class="post_item">
                     <a href="/introduce/{{post_item['post_id']}}"><img src="/static/img/{{post_item['image']}}" class="image_top" alt="投稿内容"></a>
-                    <a href="#"><p class = "title">{{post_item["title"]}}</p></a>
+                    <a href="/introduce/{{post_id}}"><p class = "title">{{post_item["title"]}}</p></a>
                 </div>                
                 {% endfor %}
             </div>   
         
         </section>
-
+        
         <section id="sec3">
             <div class="levels border">               
                 <div class="level">
-                     <h2>Level 1</h2>
+                    <h2>マニアック度<br><span style="font-size:30px;">Level 1</span></h2>
                 </div>
                 <div class="level">
-                    <a href="#"><img src="/static/img/{{tpl_level1[0][0]}}" alt="投稿内容"></a>
+                    <a href="#"><img src="/static/img/{{tpl_level1[0][1]}}" alt="投稿内容"></a>
                 </div>
                 <div class="level">
-                    <a href="#"><img src="/static/img/{{tpl_level1[1][0]}}" alt="投稿内容"></a>
+                    <a href="#"><img src="/static/img/{{tpl_level1[1][1]}}" alt="投稿内容"></a>
                 </div>
                 <div class="level">
-                    <a href="#"><img src="/static/img/{{tpl_level1[1][0]}}" alt="投稿内容"></a>
+                    <a href="#"><img src="/static/img/{{tpl_level1[1][1]}}" alt="投稿内容"></a>
                 </div>
                 <div>
                     <a href="#">もっと見る</a>
@@ -43,16 +43,16 @@
             
             <div class="levels">               
                 <div class="level">
-                     <h2>Level 2</h2>
+                    <h2>マニアック度<br><span style="font-size:30px;">Level 2</span></h2>
                 </div>
                 <div class="level">
-                    <a href="#"><img src="/static/img/{{tpl_level2[0][0]}}" alt="投稿内容"></a>
+                    <a href="#"><img src="/static/img/{{tpl_level2[0][1]}}" alt="投稿内容"></a>
                 </div>
                 <div class="level">
-                    <a href="#"><img src="/static/img/{{tpl_level2[1][0]}}" alt="投稿内容"></a>
+                    <a href="#"><img src="/static/img/{{tpl_level2[1][1]}}" alt="投稿内容"></a>
                 </div>
                 <div class="level">
-                    <a href="#"><img src="/static/img/{{tpl_level2[1][0]}}" alt="投稿内容"></a>
+                    <a href="#"><img src="/static/img/{{tpl_level2[1][1]}}" alt="投稿内容"></a>
                 </div>
                 <div>
                     <a href="#">もっと見る</a>
@@ -61,7 +61,7 @@
 
             <div class="levels">               
                 <div class="level">
-                     <h2>Level 3</h2>
+                     <h2>マニアック度<br><span style="font-size:30px;">Level 3</span></h2>
                 </div>
                 <div class="level">
                     <a href="#"><img src="/static/img/{{tpl_level3[0][0]}}" alt="投稿内容"></a>
