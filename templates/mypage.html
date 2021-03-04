@@ -3,16 +3,16 @@
 {% block content %}
 <div class="mypage_header">
 
-   <h1>〇〇さん</h1>
+   <h1>{{user_name[0]}}さん</h1>
 
-   <button type="button" name="profile_edit">登録情報確認・変更</button>
+   <button type="button" name="profile"><a href="/profile{{user_id}}">登録情報確認・変更</a></button>
 
 
 </div>
 
-<div class="mypage_post_list">
+<div class="mypage_post">
 
-   <ul style="list-style-type: none;" style="display: inline;">
+   <ul class="mypage_list">
       <li>
          <img src="../static/img/no_img.png" alt="">
          <p>title</p>
@@ -45,7 +45,7 @@
 
 </div>
 
-<button type="button" name="logout">ログアウト</button>
+<button><a class="logout" href="/logout">ログアウト</a></button>
    
    
 

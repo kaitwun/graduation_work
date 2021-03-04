@@ -29,7 +29,7 @@ def register():
         age = request.form.get("age")
 
 
-        conn = sqlite3.connect('graduation_work.db')
+        conn = sqlite3.connect("graduation_work copy.db")
         c = conn.cursor()
         c.execute("insert into users values(null,?,?,?,?,?)", (name, mail, password, age, gender))
         conn.commit()
@@ -48,13 +48,11 @@ def login():
         password = request.form.get("password")
         # ブラウザから送られてきた name ,password を userテーブルに一致するレコードが
         # 存在するかを判定する。レコードが存在するとuser_idに整数が代入、存在しなければ nullが入る
-        conn = sqlite3.connect('graduation_work.db')
+        conn = sqlite3.connect('graduation_work copy.db')
         c = conn.cursor()
-        c.execute("select id from user where e-mail = ? and password = ?", (mail, password) )
+        c.execute("select id from users where email = ? and password = ?", (mail, password) )
         user_id = c.fetchone()
         conn.close()
-        # DBから取得してきたuser_id、ここの時点ではタプル型
-        print(type(user_id))
         # user_id が NULL(PythonではNone)じゃなければログイン成功
         if user_id is None:
             # ログイン失敗すると、ログイン画面に戻す
@@ -67,6 +65,29 @@ def login():
 def logout():
     session.pop("user_id", None)
     return redirect("/top")
+
+@app.route("/mypage")
+def mypage():
+    if request.method == "GET":
+        if "user_id" in session:
+            user_id = session['user_id']
+            conn = sqlite3.connect('graduation_work copy.db')
+            c = conn.cursor()
+            c.execute("select name from users where id = ?", (user_id,))
+            user_name = c.fetchone()
+            return render_template("mypage.html", user_name = user_name)
+
+@app.route("/profile", methods=["GET", "POST"])
+def profile():
+    if request.method == "GET":
+        if "user_id" in session:
+            user_id = session['user_id']
+            conn = sqlite3.connect('graduation_work copy.db')
+            c = conn.cursor()
+            c.execute("select name, email, password, age, gender from users where id = ?", (user_id,))
+            user_info = c.fetchone()
+            return render_template("profile.html", user_info = user_info)
+
         
 
 

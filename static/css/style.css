@@ -6,17 +6,32 @@ register_form {
     margin: 0 auto
 }
 
+profile_edit_form {
+    text-align: center;
+    margin: 0 auto
+}
 
+login_form {
+    text-align: center;
+    margin: 0 auto
+}
 
+mypage_post {
+    text-align: center;
+}
 
+ul.mypage_list {
+    
+    list-style-type: none;
+}
 
+mypage_list.li {
+    display: inline;
+}
 
-
-
-
-
-
-
+logout {
+    text-decoration: none;
+}
 
 
 
