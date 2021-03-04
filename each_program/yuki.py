@@ -7,7 +7,7 @@ import sqlite3
 app = Blueprint('yuki' ,__name__)
 # app = Flask(__name__)
 
-# app.secret_key = "sunabacokoza"
+app.secret_key = "sunabacokoza"
 
 @app.route("/")
 def index():
@@ -60,6 +60,21 @@ def introduce_get(post_id):
     c.close()
     print(details_post)
     return render_template("introduce.html")
+
+
+@app.route("/level/<int:evaluation_level>")
+def level_get(evaluation_level):
+    conn = sqlite3.connect("graduation_work copy.db") #DBに接続
+    c = conn.cursor() #DBの中身をみれるようにする
+    c.execute("SELECT id ,image, title from posts where main_evaluation = ? ",(evaluation_level,))
+    #取得した値を変数に代入
+    levels = []
+    for level in c.fetchall(): #すべてのデータを辞書型に整形
+        levels.append({"post_id":level[0],"image":level[1],"title":level[2],})
+    print(levels)
+    return render_template("page_level1.html")
+
+
 
 if __name__ == "__main__":
     app.run(debug=True)
