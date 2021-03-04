@@ -48,18 +48,18 @@ def top():
     image_3 = c.fetchmany(3)
     c.close()
     # print(image_3)
-    return render_template("top.html",tpl_post = post, tpl_level1 = image_1, tpl_level2 = image_2, tpl_level3 = image_3)
+    return render_template("top.html", tpl_post = post, tpl_level1 = image_1, tpl_level2 = image_2, tpl_level3 = image_3)
    
 
-# @app.route("/introduce/<int:post_id>")
-# def introduce_get(post_id):
-#     conn = sqlite3.connect("graduation_work copy.db") #DBに接続
-#     c = conn.cursor() #DBの中身をみれるようにする
-#     c.execute("select * from posts where id = ?" ,(post_id,))
-#     details_post = c.fetchone()
-#     c.close()
-#     # print(details_post)
-#     return render_template("introduce.html")
+@app.route("/introduce/<int:post_id>")
+def introduce_get(post_id):
+    conn = sqlite3.connect("graduation_work copy.db") #DBに接続
+    c = conn.cursor() #DBの中身をみれるようにする
+    c.execute("select * from posts where id = ?" ,(post_id,))
+    details_post = c.fetchone()
+    c.close()
+    # print(details_post)
+    return render_template("introduce.html")
 
 
 # @app.route("/page_level/<int:evaluation_level>")
