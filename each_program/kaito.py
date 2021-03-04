@@ -66,7 +66,11 @@ def logout():
     session.pop("user_id", None)
     return redirect("/top")
 
-# @app.route("/mypage")
+@app.route("/mypage")
+def mypage():
+    if request.method == "GET":
+        if "user_id" in session:
+            return render_template("/mypage")
 
 # @app.route("/profile", methods=["GET", "POST"])
 # def profile():

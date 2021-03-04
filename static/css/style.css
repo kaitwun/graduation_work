@@ -6,9 +6,15 @@ register_form {
     margin: 0 auto
 }
 
+profile_edit_form {
+    text-align: center;
+    margin: 0 auto
+}
 
-
-
+login_form {
+    text-align: center;
+    margin: 0 auto
+}
 
 
 
