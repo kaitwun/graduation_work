@@ -12,54 +12,51 @@
 </head>
 <body>
 
-    <header>
-        <nav class="menu">
-            <ul>
-                <li><a href="./login.html">ログイン</a></li>
-                <li><a href="./register.html">会員登録</a></li>
-                <li><a href="./top.html">Top</a></li>
-                <li><a href="./post.html">投稿ページ</a></li>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="./css/style.css">
+        <title>まにふ〜</title>
+    </head>
+    <body>
+        <header>
     
-            </ul>
-            <ul id="menu">
-                <li class="open"><a href="#"><i>O</i>マニアック度</a>
-                    <ul class="pulldown">
+            <div class="f-container">
+                <li><a>まにふ〜</a></li>
+                <li><a href="/login">ログイン</a></li>
+                <li><a href="/register">会員登録</a></li>
+                <li><a href="/mypage">マイページ</a></li>
+                <li><a href="/top">Top</a></li>
+                <li><a href="/post">投稿ページ</a></li>
+    
+    
+                <li><a href="#">マニアック度</a></li>
+                    <ul>
                         <li><a href=“/level1/“>level1</a></li>
                         <li><a href=“/level2/“>level2</a></li>
                         <li><a href=“/level3/“>level3</a></li>
-                       
-                    </ul>
+                    </ul>      
                 </li>
-
-                <li class="open"><a href="#"><i>O</i>カテゴリー</a>
-                    <ul class="pulldown">
+                    
+                <li><a href="#">カテゴリー</a></li>
+                    <ul>
                         <li><a href=“/foods/“>食物系</a></li>
                         <li><a href=“/sweets/“>スイーツ系</a></li>
                         <li><a href=“/other/“>その他</a></li>
-                    
                     </ul>
                 </li>
-
-
-
-
-
+            
+                <li><a href="#">検索</a></li>
+        
     
-        </nav>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        </div>     
+    
+    
+        
+    
+    
+    
     </header>
 
     {% block content %}
