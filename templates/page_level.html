@@ -9,12 +9,11 @@
         </section>
 
         <section id="sec2">
-
             <div class="items">   
-                {% for post_item in tpl_post %}                        
+                {% for page_level in tpl_level %}                        
                 <div class="post_item">
-                    <a href="/introduce/{{post_item['post_id']}}"><img src="/static/img/{{post_item['image']}}" class="image_top" alt="投稿内容"></a>
-                    <a href="#"><p class = "title">{{post_item["title"]}}</p></a>
+                    <a href="/introdce/{{post_item['post_id']}}"><img src="/static/img/{{page_level['image']}}" class="image_top" alt="投稿内容"></a>
+                    <a href="/introdce/{{post_item['post_id']"><p class = "title">{{page_level["title"]}}</p></a>
                 </div>                
                 {% endfor %}
             </div>   
