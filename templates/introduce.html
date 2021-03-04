@@ -12,13 +12,13 @@
     <section id="image_area">
         <img src="../static/img/{{tpl_details[2]}}" alt="画像">
     </section>
-    <section id="level_area">
+    <!-- <section id="level_area">
         <p>マニアック度</p>
         <div>
             <span>レベル１</span>
             <span>レベル２</span>
             <span>レベル３</span>
-        </div>
+        </div> -->
  
     </section>
     <section id="main_comment_area">
@@ -32,12 +32,15 @@
     </section>
     <section id="comment_area">
         <form action="/introduce" method="post">
-            <p>名前<br>
-            <input type="text" name="name"></p>
             <p>コメント<br>
             <textarea name="comment" cols="20" rows="5" wrap="soft" maxlength="100"></textarea></p>
             <button type="submit" name="send">コメントする</button>
         </form>
+        <ul>
+            <li>{{reply_info[0]}}</li>
+            <li>{{reply_info[1]}}</li>
+            <li>{{reply_info[2]}}</li>
+        </ul>
     </section>
 
 
