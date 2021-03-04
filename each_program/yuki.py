@@ -16,7 +16,7 @@ def index():
 
 @app.route("/top" ,methods=["GET"])
 def top():
-    conn = sqlite3.connect("graduation_work copy.db") #DBに接続
+    conn = sqlite3.connect("graduation_work.db") #DBに接続
     c = conn.cursor() #DBの中身をみれるようにする
     c.execute("SELECT id, image, title from posts;")
     #取得した値を変数に代入
@@ -53,7 +53,7 @@ def top():
 
 @app.route("/introduce/<int:post_id>")
 def introduce_get(post_id):
-    conn = sqlite3.connect("graduation_work copy.db") #DBに接続
+    conn = sqlite3.connect("graduation_work.db") #DBに接続
     c = conn.cursor() #DBの中身をみれるようにする
     c.execute("select * from posts where id = ?" ,(post_id,))
     details_post = c.fetchone()
@@ -62,21 +62,21 @@ def introduce_get(post_id):
     return render_template("introduce.html")
 
 
-# @app.route("/page_level/<int:evaluation_level>")
-# def level_get(evaluation_level):
-#     conn = sqlite3.connect("graduation_work copy.db") #DBに接続
-#     c = conn.cursor() #DBの中身をみれるようにする
-#     c.execute("SELECT id ,image, title from posts where main_evaluation = ? ",(evaluation_level,))
-#     #取得した値を変数に代入
-#     post_levels = []
-#     for lev in c.fetchall(): #すべてのデータを辞書型に整形
-#         post_level.append({"post_id":lev[0],"image":lev[1],"title":lev[2],})
-#     print(post_levels)
-#     return render_template("page_level.html" ,tpl_levels = post_levels)
+@app.route("/page_level/<int:evaluation_level>")
+def level_get(evaluation_level):
+    conn = sqlite3.connect("graduation_work.db") #DBに接続
+    c = conn.cursor() #DBの中身をみれるようにする
+    c.execute("SELECT id ,image, title from posts where main_evaluation = ? ",(evaluation_level,))
+    #取得した値を変数に代入
+    post_levels = []
+    for lev in c.fetchall(): #すべてのデータを辞書型に整形
+        post_level.append({"post_id":lev[0],"image":lev[1],"title":lev[2],})
+    print(post_levels)
+    return render_template("page_level.html" ,tpl_levels = post_levels)
     
-#     post = []
-#     for item in c.fetchall(): #すべてのデータを辞書型に整形
-#         post.append({"post_id":item[0],"image":item[1],"title":item[2]})
+    post = []
+    for item in c.fetchall(): #すべてのデータを辞書型に整形
+        post.append({"post_id":item[0],"image":item[1],"title":item[2]})
 
 
 if __name__ == "__main__":
