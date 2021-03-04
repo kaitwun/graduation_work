@@ -58,10 +58,10 @@ def introduce_get(post_id):
     c.execute("select * from posts where id = ?" ,(post_id,))
     intrduce_post = c.fechone()
     c.close()
-    print(into)
+    print(introduce_post)
 
 
-    return render_template("intoroduce.html"/)
+    return render_template("intoroduce.html")
 
 if __name__ == "__main__":
     app.run(debug=True)

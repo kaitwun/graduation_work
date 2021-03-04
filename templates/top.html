@@ -5,7 +5,7 @@
 
     <article>
         <section id="sec1">
-            <h1>New Post(投稿)</h1>
+            <h1>New Post</h1>
         </section>
 
         
@@ -14,8 +14,8 @@
             <div class="items">   
                 {% for post_item in tpl_post %}                        
                 <div class="post_item">
-                    <a href="introduce/{{idを持ってくる}}"><img src="/static/img/{{post_item['image']}}" alt="投稿内容"></a>
-                    <a href="#"><p>{{post_item["title"]}}</p></a>
+                    <a href="#"><img src="/static/img/{{post_item['image']}}" class="image_top" alt="投稿内容"></a>
+                    <a href="#"><p class = "title">{{post_item["title"]}}</p></a>
                 </div>                
                 {% endfor %}
             </div>   
@@ -23,9 +23,9 @@
         </section>
 
         <section id="sec3">
-            <div class="levels">               
+            <div class="levels border">               
                 <div class="level">
-                     <p>Level 1</p>
+                     <h2>Level 1</h2>
                 </div>
                 <div class="level">
                     <a href="#"><img src="/static/img/{{tpl_level1[0][0]}}" alt="投稿内容"></a>
@@ -43,7 +43,7 @@
             
             <div class="levels">               
                 <div class="level">
-                     <p>Level 2</p>
+                     <h2>Level 2</h2>
                 </div>
                 <div class="level">
                     <a href="#"><img src="/static/img/{{tpl_level2[0][0]}}" alt="投稿内容"></a>
@@ -61,7 +61,7 @@
 
             <div class="levels">               
                 <div class="level">
-                     <p>Level 3</p>
+                     <h2>Level 3</h2>
                 </div>
                 <div class="level">
                     <a href="#"><img src="/static/img/{{tpl_level3[0][0]}}" alt="投稿内容"></a>
