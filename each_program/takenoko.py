@@ -49,7 +49,7 @@ def intoduce(post_id):
         return render_template("introduce.html" , tpl_details = details, tpl_user_name = user_name)
 
         if request.method == "POST":
-            if "user_id" in session
+            if "user_id" in session:
                 user_id = session["user_id"]
                 comment = request.form.get("comment")
                 time = datetime.now().strftime('%Y/%m/%d %H:%M:%S')
