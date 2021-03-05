@@ -29,9 +29,9 @@ def register():
         age = request.form.get("age")
 
 
-        conn = sqlite3.connect("graduation_work copy.db")
+        conn = sqlite3.connect("graduation_work.db")
         c = conn.cursor()
-        c.execute("insert into users values(null,?,?,?,?,?)", (name, mail, password, age, gender))
+        c.execute("insert into users values(null,?,?,?,?,?)", (name, age, gender, mail, password))
         conn.commit()
         conn.close()
         return redirect('/login')
@@ -48,7 +48,7 @@ def login():
         password = request.form.get("password")
         # ブラウザから送られてきた name ,password を userテーブルに一致するレコードが
         # 存在するかを判定する。レコードが存在するとuser_idに整数が代入、存在しなければ nullが入る
-        conn = sqlite3.connect('graduation_work copy.db')
+        conn = sqlite3.connect('graduation_work.db')
         c = conn.cursor()
         c.execute("select id from users where email = ? and password = ?", (mail, password) )
         user_id = c.fetchone()
@@ -71,7 +71,7 @@ def mypage():
     if request.method == "GET":
         if "user_id" in session:
             user_id = session['user_id']
-            conn = sqlite3.connect('graduation_work copy.db')
+            conn = sqlite3.connect('graduation_work.db')
             c = conn.cursor()
             c.execute("select name from users where id = ?", (user_id,))
             user_name = c.fetchone()
@@ -82,7 +82,7 @@ def profile():
     if request.method == "GET":
         if "user_id" in session:
             user_id = session['user_id']
-            conn = sqlite3.connect('graduation_work copy.db')
+            conn = sqlite3.connect('graduation_work.db')
             c = conn.cursor()
             c.execute("select name, email, password, age, gender from users where id = ?", (user_id,))
             user_info = c.fetchone()
