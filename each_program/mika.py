@@ -1,7 +1,15 @@
+<<<<<<< HEAD
 # # splite3をimportする
 # import sqlite3
 # # flaskをimportしてflaskを使えるようにする
 # from flask import Flask , render_template , request , redirect , session, url_for, Blueprint
+=======
+  
+# splite3をimportする
+import sqlite3
+# flaskをimportしてflaskを使えるようにする
+from flask import Flask , render_template , request , redirect , session, url_for, Blueprint
+>>>>>>> ef19f1701ab317f355ce85feb11fb675e985fd65
 
 # #Blueprintオブジェクトを生成
 # app = Blueprint('mika' , __name__)
@@ -17,4 +25,8 @@
 #     post = []
 #     for item in c.fetchall():
 #         post.append({"post_id":item[0],"image":item[1],"title":item[2]})
+<<<<<<< HEAD
 # >>>>>>> 95bca05df9eb8345f704e54576c47f80e50604e9
+=======
+# >>>>>>> 95bca05df9eb8345f704e54576c47f80e50604e9
+>>>>>>> ef19f1701ab317f355ce85feb11fb675e985fd65
