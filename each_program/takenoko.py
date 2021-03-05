@@ -45,7 +45,7 @@ def intoduce(post_id):
         details = c.fetchone()
         c.execute("SELECT name FROM users WHERE id = ?",(details[0],))
         user_name = c.fetchone() 
-        # print(user_name)
+        print(user_name)
         conn.close()
         return render_template("introduce.html" , tpl_details = details, tpl_user_name = user_name)
 
