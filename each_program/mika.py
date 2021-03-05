@@ -14,6 +14,7 @@ from flask import Flask , render_template , request , redirect , session, url_fo
 # #Blueprintオブジェクトを生成
 # app = Blueprint('mika' , __name__)
 
+<<<<<<< HEAD
 # @app.route("/level1", ["GET"])
 # def level1():
 #     conn = sqlite3.connect("graduation_work.db")
@@ -30,3 +31,6 @@ from flask import Flask , render_template , request , redirect , session, url_fo
 =======
 # >>>>>>> 95bca05df9eb8345f704e54576c47f80e50604e9
 >>>>>>> ef19f1701ab317f355ce85feb11fb675e985fd65
+=======
+
+>>>>>>> a3b2989b5c29779e95fd69d831f3493b0fe113cb

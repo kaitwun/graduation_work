@@ -31,10 +31,14 @@ def new_post():
         date =  request.form.get("date")
         conn = sqlite3.connect("graduation_work.db")
         c = conn.cursor()
+<<<<<<< HEAD
         c.execute("INSERT INTO posts values(null,?,?,?,?,?,?,?,?)",(user_id, title, food, image, main_evaluation, main_comment, location, category, date))
+=======
+        c.execute("INSERT INTO posts values(null,?,?,?,?,?,?,?,?)",(user_id, title, image, main_evaluation, main_comment, location, category, date))
+>>>>>>> a3b2989b5c29779e95fd69d831f3493b0fe113cb
         conn.commit()
         conn.close()
-        return render_template("intoduce.html")
+        return render_template("introduce.html")
 
 
 @app.route("/introduce/<int:post_id>", methods =["GET","POST"])
@@ -44,6 +48,7 @@ def intoduce(post_id):
         c.execute("SELECT user_id,title,image,main_evaluation,main_comment,location,category,date from posts WHERE id = ?",(post_id,))
         details = c.fetchone()
         c.execute("SELECT name FROM users WHERE id = ?",(details[0],))
+        print(details)
         user_name = c.fetchone() 
         print(user_name)
         conn.close()
@@ -66,7 +71,9 @@ def intoduce(post_id):
             c = conn.cursor()
             c.execute("SELECT users_id, others_comment, date FROM replys WHERE posts_id = ?",(post_id,))
             reply_info = c.fetchone()
-            return render_template("introduce.html" ,reply_info = reply_info)
+            print("----------------------------")
+            print(reply_info)
+            return render_template("introduce.html" , tpl_reply_info = reply_info)
 
 
         

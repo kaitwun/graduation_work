@@ -15,7 +15,7 @@
                 {% for post_item in tpl_post %}                        
                 <div class="post_item">
                     <a href="/introduce/{{post_item['post_id']}}"><img src="/static/img/{{post_item['image']}}" class="image_top" alt="投稿内容"></a>
-                    <a href="/introduce/{{post_id}}"><p class = "title">{{post_item["title"]}}</p></a>
+                    <a href="/iintroduce/{{post_item['post_id']}}"><p class = "title">{{post_item["title"]}}</p></a>
                 </div>                
                 {% endfor %}
             </div>   
@@ -28,7 +28,7 @@
                     <h2>マニアック度<br><span style="font-size:30px;">Level 1</span></h2>
                 </div>
                 <div class="level">
-                    <a href="#"><img src="/static/img/{{tpl_level1[0][1]}}" alt="投稿内容"></a>
+                    <a href="/introduce/{{tpl_post['post_id']}}"><img src="/static/img/{{tpl_level1[0][1]}}" alt="投稿内容"></a>
                 </div>
                 <div class="level">
                     <a href="#"><img src="/static/img/{{tpl_level1[1][1]}}" alt="投稿内容"></a>
@@ -37,7 +37,7 @@
                     <a href="#"><img src="/static/img/{{tpl_level1[2][1]}}" alt="投稿内容"></a>
                 </div>
                 <div>
-                    <a href="/level1">もっと見る<br>（準備中）</a>
+                    <a href="/level1">もっと見る</a>
                 </div>
             </div>
             
@@ -55,7 +55,7 @@
                     <a href="#"><img src="/static/img/{{tpl_level2[2][1]}}" alt="投稿内容"></a>
                 </div>
                 <div>
-                    <a href="/level2">もっと見る<br>（準備中）</a>
+                    <a href="/level2">もっと見る</a>
                 </div>
             </div>
 
@@ -73,7 +73,7 @@
                     <a href="#"><img src="/static/img/{{tpl_level3[2][1]}}" alt="投稿内容"></a>
                 </div>
                 <div>
-                    <a href="/level3">もっと見る<br>（準備中）</a>
+                    <a href="/level3">もっと見る</a>
                 </div>
             </div>
 
