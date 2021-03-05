@@ -26,7 +26,7 @@ def top():
 
     # image = c.fetchall()#全部取って参る
     # c.close() #DB接続終了
-    # print(post) #ターミナル上で確認
+    print(post) #ターミナル上で確認
     # #DBからimageのデータを取得
     # return render_template("top.html",tpl_post = post)
 
@@ -61,18 +61,6 @@ def introduce_get(post_id):
     # print(details_post)
     return render_template("introduce.html")
 
-
-# @app.route("/page_level/<int:evaluation_level>")
-# def level_get(evaluation_level):
-#     conn = sqlite3.connect("graduation_work.db") #DBに接続
-#     c = conn.cursor() #DBの中身をみれるようにする
-#     c.execute("SELECT id ,image, title from posts where main_evaluation = ? ",(evaluation_level,))
-#     #取得した値を変数に代入
-#     post_levels = []
-#     for lev in c.fetchall(): #すべてのデータを辞書型に整形
-#         post_level.append({"post_id":lev[0],"image":lev[1],"title":lev[2],})
-#     print(post_levels)
-#     return render_template("page_level.html" ,tpl_levels = post_levels)
 
 @app.route("/level1", methods=["GET"])
 def level1():
