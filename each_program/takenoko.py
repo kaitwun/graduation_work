@@ -46,7 +46,7 @@ def intoduce(post_id):
         c.execute("SELECT name FROM users WHERE id = ?",(details[0],))
         print(details)
         user_name = c.fetchone() 
-        # ptint(user_name)
+        print(user_name)
         conn.close()
         return render_template("introduce.html" , tpl_details = details, tpl_user_name = user_name)
 
@@ -67,7 +67,9 @@ def intoduce(post_id):
             c = conn.cursor()
             c.execute("SELECT users_id, others_comment, date FROM replys WHERE posts_id = ?",(post_id,))
             reply_info = c.fetchone()
-            return render_template("introduce.html" ,tpl_reply_info = reply_info)
+            print("----------------------------")
+            print(reply_info)
+            return render_template("introduce.html" , tpl_reply_info = reply_info)
 
 
         
