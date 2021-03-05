@@ -22,19 +22,19 @@ def new_post():
         password =  request.form.get("password")
         user_id =  request.form.get("user_id")
         title =  request.form.get("title")
-        food =  request.form.get("food")
+        # food =  request.form.get("food")
         image =  request.form.get("image")
-        main_evalution=  request.form.get("main_evalution")
+        main_evaluation=  request.form.get("main_evaluation")
         main_comment =  request.form.get("main_comment")
         location =  request.form.get("location")
         category =  request.form.get("category")
         date =  request.form.get("date")
         conn = sqlite3.connect("graduation_work.db")
         c = conn.cursor()
-        c.execute("INSERT INTO posts values(null,?,?,?,?,?,?,?,?,?,)",(user_id, title, food, image, main_evaluation, main_comment, location, category, date))
+        c.execute("INSERT INTO posts values(null,?,?,?,?,?,?,?,?)",(user_id, title, image, main_evaluation, main_comment, location, category, date))
         conn.commit()
         conn.close()
-        return render_template("intoduce.html")
+        return render_template("introduce.html")
 
 
 @app.route("/introduce/<int:post_id>", methods =["GET","POST"])
@@ -44,8 +44,9 @@ def intoduce(post_id):
         c.execute("SELECT user_id,title,image,main_evaluation,main_comment,location,category,date from posts WHERE id = ?",(post_id,))
         details = c.fetchone()
         c.execute("SELECT name FROM users WHERE id = ?",(details[0],))
+        print(details)
         user_name = c.fetchone() 
-        ptint(user_name)
+        # ptint(user_name)
         conn.close()
         return render_template("introduce.html" , tpl_details = details, tpl_user_name = user_name)
 
@@ -66,7 +67,7 @@ def intoduce(post_id):
             c = conn.cursor()
             c.execute("SELECT users_id, others_comment, date FROM replys WHERE posts_id = ?",(post_id,))
             reply_info = c.fetchone()
-            return render_template("introduce.html" ,reply_info = reply_info)
+            return render_template("introduce.html" ,tpl_reply_info = reply_info)
 
 
         
