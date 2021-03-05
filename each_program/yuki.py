@@ -73,9 +73,38 @@ def introduce_get(post_id):
 #         post_level.append({"post_id":lev[0],"image":lev[1],"title":lev[2],})
 #     print(post_levels)
 #     return render_template("page_level.html" ,tpl_levels = post_levels)
-    
+
+@app.route("/level1", methods=["GET"])
+def level1():
+    conn = sqlite3.connect("graduation_work.db")
+    c = conn.cursor()
+    c.execute("select id, image, title from posts where main_evaluation = 'level 1'")
+    post = []
+    for item in c.fetchall():
+        post.append({"post_id":item[0],"image":item[1],"title":item[2]})
+    return render_template("level1.html", tpl_post = post,)
+
+
+@app.route("/level2", methods=["GET"])
+def level2():
+    conn = sqlite3.connect("graduation_work.db")
+    c = conn.cursor()
+    c.execute("select id, image, title from posts where main_evaluation = 'level 2'")
+    post = []
+    for item in c.fetchall():
+        post.append({"post_id":item[0],"image":item[1],"title":item[2]})
+    return render_template("level2.html", tpl_post = post,)
     
 
+@app.route("/level3", methods=["GET"])
+def level3():
+    conn = sqlite3.connect("graduation_work.db")
+    c = conn.cursor()
+    c.execute("select id, image, title from posts where main_evaluation = 'level 3'")
+    post = []
+    for item in c.fetchall():
+        post.append({"post_id":item[0],"image":item[1],"title":item[2]})
+    return render_template("level3.html", tpl_post = post,)
 
 if __name__ == "__main__":
     app.run(debug=True)
