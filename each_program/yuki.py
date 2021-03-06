@@ -11,7 +11,7 @@ app.secret_key = "sunabacokoza"
 
 @app.route("/")
 def index():
-    return render_template('top.html')
+    return redirect('/top')
 
 
 @app.route("/top" ,methods=["GET"])
